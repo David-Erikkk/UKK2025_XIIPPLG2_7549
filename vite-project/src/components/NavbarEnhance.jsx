@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
 export default function NavbarEnhance() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -17,18 +18,19 @@ export default function NavbarEnhance() {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href ="/login">Login</Nav.Link>
-          <Nav.Link href="#action2">Registrasi</Nav.Link>
-          <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
-              Something else here
-            </NavDropdown.Item>
-          </NavDropdown>
+          <Button variant="outline-success" href="/login">Login</Button>
+          <Button variant="outline-info" href="/registrasi">Registrasi</Button>
+          <NavDropdown title="Category" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Today</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">This Week</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">This Month</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">All Tasks</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Week</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Home</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Fun</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </NavDropdown>
+         
           <Nav.Link href="#" disabled>
             
           </Nav.Link>
