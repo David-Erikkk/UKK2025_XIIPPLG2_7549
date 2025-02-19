@@ -8,19 +8,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function NavbarEnhance() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-    <Container fluid>
+    <Navbar expand="lg" className=" h-full">
+    <Container fluid className='d-flex flex-column  h-full'>
       <Navbar.Brand href="#" >To-Do List</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
+        
         <Nav
-          className="me-auto my-2 my-lg-0"
+          className="me-auto my-2 my-lg-0 d-flex flex-column "
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Button variant="outline-success" href="/login">Login</Button>
-          <Button variant="outline-info" href="/registrasi">Registrasi</Button>
-          <NavDropdown title="Category" id="navbarScrollingDropdown">
+          <Button variant="primary" href="/login" className='mb-2 '>Login</Button>
+          <Button variant="dark" href="/registrasi" className='mb-2'>Registrasi</Button>
+          {/* <NavDropdown title="Category" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Today</NavDropdown.Item>
               <NavDropdown.Item href="#action4">This Week</NavDropdown.Item>
               <NavDropdown.Item href="#action4">This Month</NavDropdown.Item>
@@ -29,21 +30,20 @@ export default function NavbarEnhance() {
               <NavDropdown.Item href="#action4">Home</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Fun</NavDropdown.Item>
               <NavDropdown.Divider />
-            </NavDropdown>
+            </NavDropdown> */}
          
-          <Nav.Link href="#" disabled>
-            
-          </Nav.Link>
-        </Nav>
-        <Form className="d-flex">
+        <Form className="d-flex flex-column">
           <Form.Control
             type="search"
-            placeholder="Search"
+            placeholder="Search....."
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="success" className='mt-2'>🔎</Button>
         </Form>
+
+        </Nav>
+
       </Navbar.Collapse>
     </Container>
   </Navbar>

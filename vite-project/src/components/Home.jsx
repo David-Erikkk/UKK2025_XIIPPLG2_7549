@@ -1,44 +1,42 @@
 import { useState } from 'react';
-import Tambahtugas from "../component/Tambahtugas";
-import TaskItem from "../component/TaskItem";
+// import Tambahugas from './Tambahtugas';
+// import Tugas from './Tugas';
+import NavbarEnhance from './NavbarEnhance'
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
 
 
-  const handleAddTask = (newTask) => {
-    setTasks([...tasks, newTask]);
-  };
+  // const handleAddTask = (newTask) => {
+  //   setTasks([...tasks, newTask]);
+  // };
 
-  const handleEditTask = (id, updatedTitle, updatedCategory, updatedDeadline, updatedStatus, updatedDifficulty) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id
-          ? { ...task, title: updatedTitle, category: updatedCategory, deadline: updatedDeadline, status: updatedStatus, difficulty: updatedDifficulty }
-          : task
-      )
-    );
-  };
-  const handleDeleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
+  // const handleEditTask = (id, updatedTitle, updatedCategory, updatedDeadline, updatedStatus, updatedDifficulty) => {
+  //   setTasks(
+  //     tasks.map((task) =>
+  //       task.id === id
+  //         ? { ...task, title: updatedTitle, category: updatedCategory, deadline: updatedDeadline, status: updatedStatus, difficulty: updatedDifficulty }
+  //         : task
+  //     )
+  //   );
+  // };
+  // const handleDeleteTask = (id) => {
+  //   setTasks(tasks.filter((task) => task.id !== id));
+  // };
   return (
     <div style={styles.container}>
       <aside style={styles.sidebar}>
-        <h2>📌 Menu</h2>
-        <ul>
-          <li> Home</li>
-          <li> Profile</li>
-        </ul>
+       <NavbarEnhance/>
       </aside>
 
       <main style={styles.main}>
-        <h1>📅 To-Do List</h1>
-        <Tambahtugas onAdd={handleAddTask} />
+        <h1>To-Do List</h1>
+        {/* <Tambahtugas onAdd={handleAddTask} /> */}
         <div style={styles.taskList}>
-          {tasks.map((task) => (
-            <TaskItem key={task.id} task={task} onEdit={handleEditTask} onDelete={handleDeleteTask} />
-          ))}
+          {/* {tasks.map((task) => (
+            <Tugas key={task.id} task={task} onEdit={handleEditTask} onDelete={handleDeleteTask} />
+          ))} */}
+          
         </div>
       </main>
     </div>
@@ -46,8 +44,8 @@ const Home = () => {
 };
 
 const styles = {
-  container: { display: "flex", height: "100vh", backgroundColor: "#f5e6ff" },
-  sidebar: { width: "200px", padding: "20px", backgroundColor: "#a68ee6", color: "white" },
+  container: { display: "flex", height: "100vh", backgroundColor: "#80C4E9" },
+  sidebar: { width: "200px", padding: "20px", backgroundColor: "#D9EAFD", color: "white" },
   main: { flex: 1, padding: "20px" },
   taskList: { marginTop: "20px", display: "grid", gap: "10px" },
 };

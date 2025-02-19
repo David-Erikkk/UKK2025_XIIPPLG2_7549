@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Tugas = ({ task, onEdit, onDelete }) => {
+const Tugas = ({ tugas, onEdit, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(task.title);
   const [updatedDeadline, setUpdatedDeadline] = useState(task.deadline);
@@ -9,7 +9,7 @@ const Tugas = ({ task, onEdit, onDelete }) => {
   const [updatedDifficulty, setUpdatedDifficulty] = useState(task.difficulty);
 
   const handleSave = () => {
-    onEdit(task.id, updatedTitle, updatedCategory, updatedDeadline, updatedStatus, updatedDifficulty);
+    onEdit( updatedTitle, updatedCategory, updatedDeadline, updatedStatus, updatedDifficulty);
     setIsEditing(false);
   };
 
@@ -24,49 +24,48 @@ const Tugas = ({ task, onEdit, onDelete }) => {
       alignItems: "center",
       marginBottom: "10px"
     }}>
-      {isEditing ? (
+      {isEditing ? ( 
         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
           <input type="text" value={updatedTitle} onChange={(e) => setUpdatedTitle(e.target.value)} />
           <select value={updatedCategory} onChange={(e) => setUpdatedCategory(e.target.value)}>
-          <option value="School">🏫 School</option>
-          <option value="Important">⚠️ Important</option>
-        < option value="Work">👷🏻‍♂️ Work</option>
+          <option value="School">School</option>
+          <option value="Important">Important</option>
+          <option value="Work">Work</option>
           </select>
           <input type="date" value={updatedDeadline} onChange={(e) => setUpdatedDeadline(e.target.value)} />
           <select value={updatedStatus} onChange={(e) => setUpdatedStatus(e.target.value)}>
-            <option value="Belum Selesai">❌ Belum Selesai</option>
-            <option value="Selesai">✅ Selesai</option>
+            <option value="Belum Selesai">Belum Selesai</option>
+            <option value="Selesai">Selesai</option>
           </select>
           <select value={updatedDifficulty} onChange={(e) => setUpdatedDifficulty(e.target.value)}>
-            <option value="bukan prioritas">🟢 bukan prioritas</option>
-            <option value="prioritas sedang">🟠 prioritas sedang</option>
-            <option value="prioritas utama">🔴 prioritas utama </option>
+            <option value="bukan prioritas">bukan prioritas</option>
+            <option value="prioritas sedang">prioritas sedang</option>
+            <option value="prioritas utama">prioritas utama </option>
           </select>
-          <button onClick={handleSave} style={styles.saveButton}>✅ Simpan</button>
-        </div>
-      ) : (
-        <div>
-          <h3>{task.title}</h3>
-          <p>📂 {task.category} | ⏳ {task.deadline} | {task.status} | 🎯 {task.difficulty}</p>
-        </div>
-      )}
+          <button onClick={handleSave} style={styles.saveButton}>Simpan</button>
+        </div>,
+      ) 
+      : (
+        
+     )}
+     
 
-      <div>
-        {!isEditing && (
+      {/* <div>
+        {!isEditing  (
           <>
             <button
               onClick={() => setIsEditing(true)}
               style={styles.editButton}>
-              ✏️ Edit
+              Edit
             </button>
             <button
-              onClick={() => onDelete(task.id)}
+              onClick={() => onDelete(tugas.id)}
               style={styles.deleteButton}>
-              🗑️ delete
+              Delete
             </button>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
