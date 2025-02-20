@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
+
 function Registrasi() {  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,7 +48,7 @@ function Registrasi() {
               <Form.Control
                 type="username"
                 placeholder="Username"
-                value={password}
+                value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </Form.Group>
@@ -57,7 +58,7 @@ function Registrasi() {
               <Form.Control
                 type="namalengkap"
                 placeholder="Nama lengkap"
-                value={password}
+                value={namalengkap}
                 onChange={(e) => setNamalengkap(e.target.value)}
               />
             </Form.Group>
@@ -67,7 +68,7 @@ function Registrasi() {
               <Form.Control
                 type="alamat"
                 placeholder="Alamat"
-                value={password}
+                value={alamat}
                 onChange={(e) => setAlamat(e.target.value)}
               />
             </Form.Group>
@@ -79,6 +80,8 @@ function Registrasi() {
         </Col>
       </Row>
     </Container>
+    
+    
   );
 }
 

@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
+
 export default function NavbarEnhance() {
   return (
     <Navbar expand="lg" className=" h-full">
@@ -19,9 +20,10 @@ export default function NavbarEnhance() {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Button variant="primary" href="/login" className='mb-2 '>Login</Button>
+          <Button variant="success" href="/login" className='mb-2 '>Login</Button>
           <Button variant="dark" href="/registrasi" className='mb-2'>Registrasi</Button>
-          {/* <NavDropdown title="Category" id="navbarScrollingDropdown">
+          <Button variant="danger" href="/logout" className='mb-2 mt-4'>Log Out</Button>
+          { <NavDropdown title="Category" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Today</NavDropdown.Item>
               <NavDropdown.Item href="#action4">This Week</NavDropdown.Item>
               <NavDropdown.Item href="#action4">This Month</NavDropdown.Item>
@@ -29,17 +31,17 @@ export default function NavbarEnhance() {
               <NavDropdown.Item href="#action4">Week</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Home</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Fun</NavDropdown.Item>
-              <NavDropdown.Divider />
-            </NavDropdown> */}
+              
+            </NavDropdown> }
          
-        <Form className="d-flex flex-column">
+        <Form className="d-flex flex-column mt-5">
           <Form.Control
             type="search"
             placeholder="Search....."
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="success" className='mt-2'>🔎</Button>
+          <Button variant="primary" className='mt-2'>🔎</Button>
         </Form>
 
         </Nav>
